@@ -1,0 +1,167 @@
+/* FIRST PART OF CATEGORIES.CSS SAME WITH JUST4KICKS.CSS */
+body {
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    margin-right: 115px; /*centered b/t categories */
+}
+h1 a{
+    /* a tag black font, no underline */
+    color: black;
+    text-decoration: none;
+}
+h1 li{
+    display: inline;
+}
+p img {
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-left: 13px;
+}
+/*link color to black and removes underline*/
+nav a{
+    color: black;
+    text-decoration: none;
+}
+nav ul{
+    /*so categories centered under website name */
+    margin-left: 210px; /*started from 100 them 300 in the end figure 210 best yayay */
+}
+nav li{
+    display: inline; /*removes bullet*/
+    font-size: 20px;
+    background-color: #F1F1F1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*hover on categories underlines the text and makes it bigger*/
+nav li:hover{
+    text-decoration: underline;
+    font-weight: 900;
+}
+#search {
+    /*position search bar right of page*/
+    float: right;
+    border: 1px dotted gray
+}
+/* so placeholder for searc same font entire website*/
+::placeholder{
+    font-family: Courier;
+}
+/*styling button for search*/
+nav form button{
+    font-family: Courier;
+    background-color: #F1F1F1;
+    border: 2px solid #EEEEEE;
+} 
+/*(SECOND PART) STYLES THE CATEGORIES*/
+.content{
+    border: 2px solid #EEEEEE;
+    padding: 25px;
+}
+#Items{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+h3 {
+    background-color: #EEEEEE;
+}
+#select{
+    font-family: Courier;
+    text-align: center;
+}
+aside form button{
+    font-family: Courier;
+    background-color: #EEEEEE;
+    border-color: #F1F1F1;
+}
+#purchase{
+    font-family: Courier; 
+    width: 40%;
+    background-color: #EEEEEE;
+    border-color: #F1F1F1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.addCart{
+    font-family: Courier;
+    width: 10%;
+
+}
+.clearCart{
+    font-family: Courier;
+    width: 20%;
+}
+.cart-row{
+    display: flex;
+    background-color: #EEEEEE;
+}
+.cart-item {
+    width:45%;
+}
+
+.cart-price {
+    width: 20%;
+}
+.cart-quantity {
+    width: 35%;
+}
+.purchase-button{
+    font-family: Courier;
+    font-size: 15px;
+    width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*table{
+    border: 2px solid lightgray;
+    justify-content: center;
+}
+td img{
+    width: 300px;
+    height: auto;
+    padding: 15px;
+}
+th:hover{
+    font-weight: 500;
+    text-decoration: underline;
+}*/

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="Just4Kicks.css">
+<meta charset=" utf-8">
+<html>
+
+<body>
+    <header>
+        <!--<p><img src="images/Logo.jpg" alt="Logo"></p>-->
+        <p><img src="images/Logo1.png" alt="shoe1"></p> <!--Looks better?-->
+        <h1>Just4Kicks</h1>
+        <nav>
+            <ul>
+                <!--Categories with links-->
+                <li><a href="New_Arrivals.html">New Arrivals</a></li>
+                <li><a href="Men.html">Men</a></li>
+                <li><a href="Women.html">Women</a></li>
+                <li><a href="Kids.html">Kids</a></li>
+
+                <!-- search bar //search bar not searching tho-->
+                <form id="search">
+                    <input type="text" id="query" name="q" placeholder="Search"><button>Search</button>
+                </form>
+            </ul>
+        </nav>
+    </header>
+    <!--grid container to create three columns that displays shoes and style inspo-->
+    <div id="grid-container">
+        <!--content class for article,main,aside so they all have the same border-->
+        <div class="content"> <!--JavasScript here maybe-->   
+            <article>
+                <script>
+                    //Slideshows of pictures
+                    let i = 0; // the start point of the slides show
+                    let images = []; //setting up an empty array for images
+                    let timer = 5000; //5000ms so pics change every 5 secs. 
+
+                    //initializing array with the pics 
+                    images[0] = "images/style1.jpg";
+                    images[1] = "images/style2.jpg";
+                    images[2] = "images/style3.jpg";
+
+                    //making fuction that will change the pics 
+                    function imageChanger() {
+                        document.slideshow.src = images[i]; //name attribute of the images in this document is slideshow, array is source of the slideshow 
+
+                        if(i<images.length-1){ //if else loop with the condition images.length-1 b/c arrays start index at 0 and images.length is 3 
+                            i++; //increment i so pic changes
+                        }
+                        else{
+                            i=0; //resetting it back to zero when its at the last index
+                        }
+                        //run function with set time limit
+                        setTimeout("imageChanger()", timer);
+                    }
+                    //when the window loads, imageChanger function is called and starts the slide show;
+                    window.onload = imageChanger;   
+                </script>
+                
+                <div>
+                    <img name="slideshow" width="370" height="470" style="float:left; margin-top:110px;"> <!--slideshow pics set up-->
+                </div>
+            </article>
+        </div>
+
+        <div class="content">
+            <main>
+                <table>
+                    <!--used table to display products ***JUST DISPLAY HERE***-->
+                    <tr>
+                        <td><img src="images/shoe1.webp" alt="shoe1"></td>
+                        <td><img src="images/shoe2.webp" alt="shoe2"></td>
+                        <td><img src="images/shoe3.jpeg" alt="shoe3"></td>
+                    </tr>
+                    <tr>
+                        <th>Travis Scott x Air Jordan 1 Retro High OG 'Mocha'</th>
+                        <th>StrangeLove x Dunk Low SB 'Valentine's Day'</th>
+                        <th>New Balance 550 'White Green'</th>
+
+                    </tr>
+                    <tr>
+                        <td><img src="images/shoe4.webp" alt="shoe4"></td>
+                        <td><img src="images/shoe5.webp" alt="shoe5"></td>
+                        <td><img src="images/shoe6.webp" alt="shoe6"></td>
+                    </tr>
+                    <tr>
+                        <th>Chuck Taylor All Star Lift Platform 'Embroidered Floral - Egret'</th>
+                        <th>Wmns Air Max 90 SE 'Princess Charming'</th>
+                        <th>Dunk Low 'Jackie Robinson'</th>
+                    </tr>
+                    <tr>
+                        <td><img src="images/shoe7.webp" alt="shoe7"></td>
+                        <td><img src="images/shoe8.webp" alt="shoe8"></td>
+                        <td><img src="images/shoe9.webp" alt="shoe9"></td>
+                    </tr>
+                    <tr>
+                        <th>Monsters Inc. x Forum Low Little Kid 'George Sanderson'</th>
+                        <th>Toy Story x NMD_R1 Little Kid 'Sheriff Woody'</th>
+                        <th>Forum Low Little Kid 'Valentine's Day'</th>
+                    </tr>
+                </table>
+            </main>
+        </div>
+
+        <div class="content"> <!--Javascript here maybe the //second script tag doesnt want to work PAIN--> 
+            <aside style="padding-top: 10px;">
+                <div>
+                    <img src="images/style4.jpg" width="180" height="auto">
+                </div>
+                
+                <div>
+                    <img src="images/style5.jpg" width="180" height="auto">
+                </div>
+                
+                <div>
+                    <img src="images/style6.jpg" width="180" height="auto">
+                </div>
+            </aside> 
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="mailto:igmuan1890@ung.edu" target="_blank">Help</a></li> <!--Help has link which opens email //target blank so it opens up new tab-->
+            <li><a href="https://www.instagram.com/sneakernews/?hl=en" target="_blank">Follow Us</a></li> <!--Follows us has link of an instagram page of sneakers-->
+            <li><a href="https://fashion-history.lovetoknow.com/fashion-accessories/sneakers" target="_blank">About</a</li><!--About has link of webpage that has history of sneakers-->
+        </ul>
+    </footer>
+    
+</body>
+
+</html>

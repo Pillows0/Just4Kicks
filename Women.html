@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="Categories.css">
+<meta charset=" utf-8">
+<html>
+    <body>
+        <header><!--Header copied and pasted from main page of website-->
+            <!--<p><img src="images/Logo.jpg" alt="Logo"></p>-->
+            <p><img src="images/Logo1.png" alt="Logo1"></p>
+            <!--ADDED HREF JUST4KICK.HTML SO WHEN CLICKING h1 GOES BACK TO "HOME PAGE"-->
+            <h1><a href="Just4Kicks.html">Just4Kicks</a></h1>
+                <nav>
+                    <ul> <!--Categories with links-->
+                        <li><a href="New_Arrivals.html">New Arrivals</a></li>
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="Women.html">Women</a></li>
+                        <li><a href="Kids.html">Kids</a></li>
+                    
+                    <!--search bar-->
+                    <form id="search">
+                        <input type="text" id="Lookfor" name="Lookfor" placeholder="Search"><button>Search</button>
+                    </form>
+                    </ul>
+                </nav>
+        </header>
+        <div id="Items">
+            <main class ="content">
+                <div class="product">
+                    <img src="images/shoe2.webp" alt="shoe2" width="300" height="auto">
+                    <h4>StrangeLove x Dunk Low SB 'Valentine's Day'</h4>
+                    <h4>&#36; 110.00</h4>
+                </div>
+                <div class="product">
+                    <img src="images/shoe4.webp" alt="shoe4" width="300" height="auto">
+                    <h4>Chuck Taylor All Star Lift Platform 'Embroidered Floral - Egret'</h4>
+                    <h4>&#36; 95.00</h4>
+                </div>
+                <div class="product">
+                    <img src="images/shoe5.webp" alt="shoe5" width="300" height="auto">
+                    <h4>Wmns Air Max 90 SE 'Princess Charming'</h4>
+                    <h4>&#36; 100.00</h4>
+                </div>
+            </main>
+            <aside class="content">
+
+                <h3>CART</h3> <!--making a cart // not the usual way bc i couldnt make what i tried to do in prototype work :'(-->
+    
+                <div class="cart-items"> 
+                    <form id="myForm">
+                        <p><h4>Product: </h4>
+                            <select id="select"> <!--dropdown select so customer can shoose which product they want-->
+                                <option value="110.00" id="Valentine">StrangeLove x Dunk Low SB 'Valentine's Day'</option>
+                                <option value="95.00" id="Floral">Chuck Taylor All Star Lift Platform 'Embroidered Floral - Egret'</option>
+                                <option value="100.00" id="PrincessCharming">Wmns Air Max 90 SE 'Princess Charming'</option>
+                            </select></p>
+    
+                            <button id="add" type="button">Add</button>
+                            <button id="remove" type="button">Remove</button>
+                        </form>
+                </div>
+                <div id="cart-items">
+                    <h3>Items: </h3>
+                    <div id="cart"></div>
+                </div>
+    
+                <div id="subtotal">
+                    <h3>Total:</h3>
+                    <p id="total-of-cart"></p>
+                </div>
+                <button id="purchase" type="button">PURCHASE</button>
+            </aside>
+        </div>
+        <script>
+             //I TRIED TO MAKE THE JS FILE WORK BUT IT WOULDNT I REALLY TRIED TIL THE LAST MINUTE BUT I COULDNT MAKE IT WORK
+        //I WAS FOLLOWING A TUTORIAL BUT THEY DID STUFF I DONT REALLY KNOW YET SO I ENDED UP SCRAPING EVRYTHING
+       
+        //new variables by getting id
+        var button = document.getElementById("add");
+        var select = document.getElementById("select");
+        var cart = document.getElementById("cart");
+        var totalCost = document.getElementById("total-of-cart");
+        var purchaseButton = document.getElementById("purchase");
+
+        //empty array for cart 
+        var myCart = []; 
+        //function to add item in cart
+        function addToCart() {
+            //making item 
+            var item ={
+                value : Number(select.options[select.selectedIndex].value),
+                name: select.options[select.selectedIndex].text
+            };
+            //add item in array
+            myCart.push(item);
+            updateCart();
+        }
+        //function that calls other functions to update cart
+        function updateCart() {
+            printCart();
+            printTotal();
+        }
+        //caculate total
+        function printTotal() {
+            var total = myCart.reduce(function (acc, item){
+                return acc + item.value;
+            }, 0); 
+            totalCost.innerText = "$" + total;  // prints total
+        }
+        //making the item selected show up in the item part of the cart 
+        function printCart() {
+            cart.innerHTML = '';
+            myCart.forEach(function(item){
+                var li = document.createElement("li"); //create li element
+                li.innerHTML = item.name; //new created li element will have name of selected item
+                cart.appendChild(li); //append li in cart
+            })
+        }
+        //function removes item when the remove button is clicked
+        document.getElementById("remove").onclick = function(){
+            myCart.pop();
+            updateCart();
+        }
+        //event listener for add to cart
+        button.addEventListener("click", addToCart);
+        
+        function validate(event){
+            
+            if(document.getElementById("purchase").clicked == true){ //if purchase button is clicked
+                if(totalCost === 0){ //if the cart is empty alert the customer that cart is empty
+                    alert("Cart is empty!")
+                }
+            }
+            else{
+                confirm("Thank you for your purchase! :)")
+            }
+        }
+        purchaseButton.addEventListener("click", validate);
+
+        </script>
+     </body>
+</html>

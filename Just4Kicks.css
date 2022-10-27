@@ -1,0 +1,95 @@
+body {
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    margin-right: 115px; /*centered b/t categories got moved by logo*/
+}
+/* logo shows at the left side of the page adjusted h,w, and margin so it looks nice */
+p img {
+    float: left;
+    width: 100px;
+    height: auto;
+    margin-left: 13px;
+}
+/*link color to black and removes underline*/
+nav a{
+    color: black;
+    text-decoration: none;
+}
+nav ul{
+    /*categories centered under website name */
+    margin-left: 210px; /*started from 100 them 300 in the end figure 210 best yayay */
+}
+nav li{
+    justify-content: center;
+    display: inline; /*removes bullet*/
+    font-size: 20px;
+    background-color: #F1F1F1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*hover on categories underlines the text and makes it bigger*/
+nav li:hover{
+    text-decoration: underline;
+    font-weight: 900;
+}
+#search {
+    /*position search bar right of page*/
+    float: right;
+    border: 1px dotted gray
+}
+/* so placeholder for searc same font entire website*/
+::placeholder{
+    font-family: Courier;
+}
+/*styling button*/
+form button{
+    font-family: Courier;
+    background-color: #F1F1F1;
+    border: 2px solid #EEEEEE;
+} 
+/*grid container set up */
+#grid-container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+}
+/*content class has this border design */
+.content{
+    border: 2px solid #EEEEEE;  
+}
+/*pics in main td  have same format*/
+main td img{
+    width: 300px;
+    height: auto;
+    padding: 15px; /*spacing*/
+}
+main th:hover{
+    font-weight: 500;
+    text-decoration: underline;
+}
+footer{
+    position: relative;
+    float: bottom;
+}
+footer li{
+    display: inline; /*removes bullet*/
+    padding: 10px;
+}
+/*making it look pretty when hover */
+footer li:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+footer li a{
+    color: black;
+    text-decoration: none;
+}
+footer li a:hover{
+    /* so same with footer li with no link */
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
